@@ -1,0 +1,32 @@
+.general{
+    border: 0;
+    min-width: 140px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 10pt;
+}
+.primary{
+    background-color: #827249;
+    color: white;
+}
+.primary:hover{
+    background-color: #B59F65;
+}
+.primary:active{
+    background-color: #B29347 !important;
+}
+.secondary{
+    background-color: #871C20;
+    color: white;
+    border: 0;
+}
+.secondary:hover{
+    background-color: #A1151A;
+}
+.secondary:active{
+    background-color: #B71319 !important;
+}
+.gray{
+    color: #141c1c;
+}
+

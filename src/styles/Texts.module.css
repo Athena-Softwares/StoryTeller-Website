@@ -1,0 +1,30 @@
+.title_white{
+    color: white;
+    font-weight: 500;
+    font-size: 22pt;
+    font-family: 'montserrat';
+}
+
+.small_regular, .small_regular span{
+    font-size: 10pt;
+    font-family: 'montserrat';
+    font-weight: 300;
+}
+
+.small_semiBold{
+    font-size: 10pt;
+    font-family: 'montserrat';
+    font-weight: 700;
+}
+
+
+.links:hover a {
+    color: #871C20 !important;
+}
+.links:active {
+    color: #871C20;
+}
+
+.small_regular_label{
+    font-size: 12px !important;
+}
