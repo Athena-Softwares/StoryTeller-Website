@@ -49,7 +49,7 @@ const IndexItems = () => {
     return (
         <Col sm={12} className='d-flex justify-content-center justify-content-md-end'>
             <Button size='sm' className={`${buttons.secondary} ${buttons.general} mx-1`} onClick={() => router.push('/login')}>Entre</Button>
-            <Button size='sm' className={`${buttons.primary} ${buttons.general} mx-1`}>Cadastre-se</Button>
+            <Button size='sm' className={`${buttons.primary} ${buttons.general} mx-1`}>Cadastre-se</Button> 
         </Col>
     )
 }

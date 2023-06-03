@@ -4,6 +4,7 @@
     border-radius: 25px;
     font-weight: 500;
     font-size: 10pt;
+    font-family: 'montserrat';  
 }
 .primary{
     background-color: #827249;
@@ -25,6 +26,17 @@
 }
 .secondary:active{
     background-color: #B71319 !important;
+}
+.darkRed{
+    background-color: #3B0C0E;
+    color: white;
+    border: 0;
+}
+.darkRed:hover{
+    background-color: #4a1215;
+}
+.darkRed:active{
+    background-color: #501517 !important;
 }
 .gray{
     color: #141c1c;
