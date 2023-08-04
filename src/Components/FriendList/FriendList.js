@@ -10,7 +10,7 @@ export const FriendList = (props) => {
             position-absolute end-0 
             border border-1 border-opacity-10
             col-sm-2
-            h-100
+            ${styles.friends_body}
         `}>
             <Container class={`${styles.background_header} d-flex justify-content-center align-items-center`}>
                 <Text>Amigos</Text>
