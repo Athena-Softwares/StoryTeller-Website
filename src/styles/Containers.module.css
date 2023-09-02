@@ -1,26 +1,26 @@
-.container_lading_page{
-    background-image: url(../../public/Ordem_Paranormal.jpg);
-    width: 100%;
-    height: 60vh;
-    background-position: 50% 38%;
+.container_lading_page {
+  background-image: url(../../public/Ordem_Paranormal.jpg);
+  width: 100%;
+  height: 60vh;
+  background-position: 50% 38%;
 }
 
-.container_black{
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
+.container_black {
+  background-color: black;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
-.image_background_login{
-    background-image: url(../../public/enigma_do_medo_sem_logo.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.image_background_login {
+  background-image: url(../../public/enigma_do_medo_sem_logo.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.image_background_cadastro{
-    background-image: url(../../public/Gal_OP.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.image_background_cadastro {
+  background-image: url(../../public/Gal_OP.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

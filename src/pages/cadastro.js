@@ -22,7 +22,7 @@ export default function Cadastro() {
             </Head>
             <main>
                 <Container fluid className={container.container_black}>
-                    <Row className='h-100'>
+                    <Row className='min-vh-100'>
                         <Col xs={12} md={8} className='d-flex flex-column align-items-center justify-content-center'>
                             <Row className='justify-content-center my-4'>
                                 <Col>
@@ -31,9 +31,9 @@ export default function Cadastro() {
                             </Row>
                             <Spacer y={1} />
                             <SignUpForm />
-                        </Col>
-                        <Spacer y={2}/>
-                        <Col md={4} className={`${container.image_background_cadastro} align-items-center d-none d-md-flex`}>
+                        </Col>  
+                        {/* <Spacer y={2}/> */}
+                        <Col xs={12} md={4} className={`${container.image_background_cadastro} align-items-center d-none d-md-flex`}>
                             <Image width={606} height={466.95} src='/story_teller_logo_compacto_sombreado.svg' alt='logo Story Teller' />
                         </Col>
                         <Col xs={12} className={`justify-content-center d-flex d-md-none`}>
