@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/storyicon.ico" />
       </Head>
       <main>
-        <Header index/>
+        <Header type="index"/>
         <Container fluid className={`${container.container_lading_page} d-flex justify-content-center align-items-center`}>
           <Row>
             <Col>

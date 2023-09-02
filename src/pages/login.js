@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import React from 'react'
-import { Col, Container, InputGroup, Row } from 'reactstrap'
+import { Col, Container, InputGroup, Row, Button } from 'reactstrap'
 import container from '@/styles/Containers.module.css'
 import text from '@/styles/Texts.module.css'
 import input from '@/styles/Inputs.module.css'
-import button from '@/styles/Buttons.module.css'
+import buttons from '@/styles/Buttons.module.css'
 import Image from 'next/image'
-import { Button, Checkbox, Input } from '@nextui-org/react'
+import { Checkbox, Input, Spacer } from '@nextui-org/react'
 import Link from 'next/link'
 import { CustomLink } from '@/Components/Texts'
 import { useRouter } from 'next/router'
@@ -32,27 +32,24 @@ function Login() {
                             </Row>
                             <Row className='justify-content-center'>
                                 <Col xs={10}>
-                                    <Row className='py-3'>
-                                        <Col>
+                                    <Row className='py-4'>
+                                        <Col className='d-flex flex-column justify-content-center align-items-center'>
                                             <Input
-                                                size='sm'
+                                                width='100%'
                                                 labelPlaceholder="E-mail"
                                                 status="default"
                                                 clearable
                                             />
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-3'>
-                                        <Col>
+                                            <Spacer y={2} />
                                             <Input.Password
-                                                size='sm'
+                                                width='100%'
                                                 labelPlaceholder="Senha"
                                                 status="default"
                                                 clearable
                                             />
                                         </Col>
                                     </Row>
-                                    <Row  className='py-2'>
+                                    <Row className='py-2'>
                                         <Col className='px-3'>
                                             <Checkbox color='secondary' className={text.small_regular}>
                                                 Lembre-se de mim
@@ -61,13 +58,13 @@ function Login() {
                                     </Row>
                                     <Row className='py-2'>
                                         <Col md={12} className='d-flex justify-content-center'>
-                                            <Button rounded size="sm" color='secondary' onClick={() => router.push('/dashboard')}>Entrar</Button>
+                                            <Button rounded size="md" className={`${buttons.darkRed} ${buttons.general}`} onClick={() => router.push('/dashboard')}>Entrar</Button>
                                         </Col>
                                     </Row>
                                     <Row>
-                                    <Col md={12} className='d-flex justify-content-center align-items-center px-0 mx-0' >
+                                        <Col md={12} className='d-flex justify-content-center align-items-center px-0 mx-0 pt-2' >
                                             {/* <span className={text.small_regular}>Não possui login?<Link className={`${text.links}, ${text.small_semiBold}`} href="/login" color="green"> Cadastre-se</Link></span> */}
-                                        <span className={text.small_regular}>Não possui login?</span><CustomLink href='/cadastro' className='px-1'>Cadastre-se</CustomLink>
+                                            <span className={text.small_regular}>Não possui login?</span><CustomLink href='/cadastro' className={`${text.small_regular} px-1`}>Cadastre-se</CustomLink>
                                         </Col>
                                     </Row>
                                 </Col>

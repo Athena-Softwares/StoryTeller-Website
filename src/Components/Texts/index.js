@@ -5,12 +5,12 @@ export const CustomLink = styled(Link, {
   fontSize: '10pt',
   fontFamily: 'montserrat',
   fontWeight: '700',
-  color: '#3B0C0E',
+  color: '#871C20',
   '&:hover':{
-    color: '#871C20',
+    color: '#9F2126',
   },
 '&:active':{
-    color: '#871C20',
+    color: '#C66568',
   }
 }
 

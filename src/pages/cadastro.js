@@ -6,14 +6,12 @@ import text from '@/styles/Texts.module.css'
 import input from '@/styles/Inputs.module.css'
 import button from '@/styles/Buttons.module.css'
 import Image from 'next/image'
-import { Button, Checkbox, Dropdown, Input } from '@nextui-org/react'
+import { Button, Checkbox, Dropdown, Input, Spacer } from '@nextui-org/react'
 import Link from 'next/link'
 import { CustomLink } from '@/Components/Texts'
 import { UploadIcon } from '@/assets/Icons/UploadIcon'
 
 export default function Cadastro() {
-    const [selected, setSelected] = useState('Gênero')
-    const [option, setOption] = useState(selected)
     return (
         <>
             <Head>
@@ -24,115 +22,18 @@ export default function Cadastro() {
             </Head>
             <main>
                 <Container fluid className={container.container_black}>
-                    <Row className='h-100'>
+                    <Row className='min-vh-100'>
                         <Col xs={12} md={8} className='d-flex flex-column align-items-center justify-content-center'>
                             <Row className='justify-content-center my-4'>
                                 <Col>
                                     <span className={text.title_white}>Cadastre-se</span>
                                 </Col>
                             </Row>
-                            <Row className='justify-content-center'>
-                                <Col xs={10}>
-                                    <Row className='py-3'>
-                                        <Col xs={12} md={6}>
-                                            <Input
-                                                size='sm'
-                                                labelPlaceholder="Nome Completo"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Input
-                                                size='sm'
-                                                labelPlaceholder="Username"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-3'>
-                                        <Col xs={12} md={6}>
-                                            <Input
-                                                size='sm'
-                                                labelPlaceholder="E-mail"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Input
-                                                size='sm'
-                                                labelPlaceholder="Nome de exibição"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-3'>
-                                        <Col xs={12} md={6}>
-                                            <Input.Password
-                                                size='sm'
-                                                labelPlaceholder="Senha"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Input.Password
-                                                size='sm'
-                                                labelPlaceholder="Confirmar senha"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-3'>
-                                        <Col sm={12} md={6}>
-                                            <Dropdown>
-                                                <Dropdown.Button size="sm" flat color="primary" className={text.small_regular_label}>
-                                                    {selected}
-                                                </Dropdown.Button>
-                                                <Dropdown.Menu
-                                                    aria-label="Single selection actions"
-                                                    color="primary"
-                                                    disallowEmptySelection
-                                                    selectionMode="single"
-                                                    selectedKeys={option}
-                                                    onSelectionChange={setSelected}
-                                                >
-                                                    <Dropdown.Item key="Feminino">Feminino</Dropdown.Item>
-                                                    <Dropdown.Item key="Masculino">Masculino</Dropdown.Item>
-                                                    <Dropdown.Item key="Outro">Outro</Dropdown.Item>
-                                                    <Dropdown.Item key="Prefiro não informar">Prefiro não informar</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown>
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Button
-                                                auto
-                                                size="sm"
-                                                css={{ backgroundColor: '$gray', color: '#697177' }}
-                                                className={text.small_regular_label}
-                                                icon={<UploadIcon fill="#697177" filled />}
-                                            >Selecione uma foto</Button>
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-4 mt-4'>
-                                        <Col md={12} className='d-flex justify-content-center'>
-                                            <Button rounded size="sm" color='secondary'>Cadastrar</Button>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col md={12} className='d-flex justify-content-center align-items-center px-0 mx-0' >
-                                            <span className={text.small_regular}>Já está cadastrado?</span><CustomLink href='/login' className='px-1'>Faça login</CustomLink>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-
-                        </Col>
-                        <Col md={4} className={`${container.image_background_cadastro} align-items-center d-none d-md-flex`}>
+                            <Spacer y={1} />
+                            <SignUpForm />
+                        </Col>  
+                        {/* <Spacer y={2}/> */}
+                        <Col xs={12} md={4} className={`${container.image_background_cadastro} align-items-center d-none d-md-flex`}>
                             <Image width={606} height={466.95} src='/story_teller_logo_compacto_sombreado.svg' alt='logo Story Teller' />
                         </Col>
                         <Col xs={12} className={`justify-content-center d-flex d-md-none`}>
@@ -142,6 +43,137 @@ export default function Cadastro() {
                 </Container>
             </main>
         </>
+    )
+}
 
+const SignUpForm = () => {
+    return (
+        <Row className='justify-content-center'>
+            <Col xs={10}>
+                <Fields />
+                <Spacer y={2} />
+                <Row className='justify-content-center'>
+                    <Col md={6} className='d-flex justify-content-center flex-column'>
+                        <Button rounded size="md" color='secondary'>Cadastrar</Button>
+                        <Spacer y={0.5} />
+                        <div className='d-flex flex-row justify-content-center'>
+                            <span className={text.small_regular}>Já está cadastrado?</span><CustomLink href='/login' className='px-1'>Faça login</CustomLink>
+                        </div>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+    )
+}
+
+const Fields = () => {
+    return (
+        <>
+            <Row>
+                <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                    <Input
+                        width='100%'
+                        labelPlaceholder="Nome Completo"
+                        status="default"
+                        clearable
+                    />
+                </Col>
+                <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                    <Input
+                        width='100%'
+                        labelPlaceholder="Username"
+                        status="default"
+                        clearable
+                    />
+                </Col>
+            </Row>
+            <Spacer y={2} />
+            <Row>
+                <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                    <Input
+                        width='100%'
+                        labelPlaceholder="E-mail"
+                        status="default"
+                        clearable
+                    />
+                </Col>
+                <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                    <Input
+                        width='100%'
+                        labelPlaceholder="Nome de exibição"
+                        status="default"
+                        clearable
+                    />
+                </Col>
+            </Row>
+            <Spacer y={2} />
+            <Passwords />
+            <Spacer y={2} />
+            <Row>
+                <GenderDropdown />
+                <PhotoUpload />
+            </Row>
+        </>
+    )
+}
+
+const PhotoUpload = () => {
+    return (
+        <Col xs={12} sm={6} className='py-2 py-sm-0'>
+            <Button 
+            flat
+            className='p-3'
+            css={{ backgroundColor: '$gray', color: '#697177', width: '100%' }} 
+            icon={<UploadIcon fill="#697177" filled />}
+            >Selecione uma foto</Button>
+        </Col>
+    )
+}
+const GenderDropdown = () => {
+    const [selected, setSelected] = useState('Gênero')
+    const [option, setOption] = useState(selected)
+    return (
+        <Col xs={12} sm={6} className='py-2 py-sm-0'>
+            <Dropdown>
+                <Dropdown.Button flat color="primary">
+                    {selected}
+                </Dropdown.Button>
+                <Dropdown.Menu
+                    aria-label="Single selection actions"
+                    color="primary"
+                    disallowEmptySelection
+                    selectionMode="single"
+                    selectedKeys={option}
+                    onSelectionChange={setSelected}
+                >
+                    <Dropdown.Item key="Feminino">Feminino</Dropdown.Item>
+                    <Dropdown.Item key="Masculino">Masculino</Dropdown.Item>
+                    <Dropdown.Item key="Outro">Outro</Dropdown.Item>
+                    <Dropdown.Item key="Prefiro não informar">Prefiro não informar</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </Col>
+    )
+}
+const Passwords = () => {
+    return (
+        <Row>
+            <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                <Input.Password
+                    width='100%'
+                    labelPlaceholder="Senha"
+                    status="default"
+                    clearable
+                />
+            </Col>
+            <Col xs={12} sm={6} className='py-2 py-sm-0'>
+                <Input.Password
+                    width='100%'
+                    labelPlaceholder="Confirmar senha"
+                    status="default"
+                    clearable
+                />
+            </Col>
+        </Row>
     )
 }

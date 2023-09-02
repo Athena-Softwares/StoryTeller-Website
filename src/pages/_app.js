@@ -7,7 +7,7 @@ const theme = createTheme({
   type: "dark", // it could be "light" or "dark"
   theme: {
     colors: {
-      background: "$white",
+      background: "#FCFCFC",
       primary: '#827249',
       primarySolidHover: '#B59F65',
       primaryActive: '#B59F65',
@@ -17,10 +17,10 @@ const theme = createTheme({
       primaryLightActive: '#697177',
       secondary: '#3B0C0E',
       secondaryLight: '#3B0C0E',
-      secondaryLightHover: '#871C20',
-      secondaryLightContrast: 'white',
-      secondarySolidHover: '#871C20',
-      secondaryActive: '#871C20',
+      secondaryLightHover: '#4a1215',
+      secondaryLightContrast: '#3B0C0E',
+      secondarySolidHover: '#4a1215',
+      secondaryActive: '#4a1215',
       error: '#FCC5D8',
       //shades
       gray:  '#16181a',
@@ -29,6 +29,7 @@ const theme = createTheme({
       grayScaleLightContrast: '#697177',
       grayScaleLightHover: '#454A4E',
       grayScaleLightActive: '#697177',
+      myColor: 'green'
     },
   }
 })
