@@ -122,8 +122,10 @@ const PhotoUpload = () => {
         <Col xs={12} sm={6} className='py-2 py-sm-0'>
             <Button 
             flat
-            className='p-3'
-            css={{ backgroundColor: '$gray', color: '#697177', width: '100%' }} 
+            color="secondary"
+            className={` p-3 ${button.photoButton}`}
+            // css={{ backgroundColor: '$gray', color: '#697177', width: '100%', primaryActive: '$grayPrimaryActive' }} 
+            css={{width: '100%', backgroundColor: '$gray', color: '#697177'}}
             icon={<UploadIcon fill="#697177" filled />}
             >Selecione uma foto</Button>
         </Col>
@@ -135,7 +137,7 @@ const GenderDropdown = () => {
     return (
         <Col xs={12} sm={6} className='py-2 py-sm-0'>
             <Dropdown>
-                <Dropdown.Button flat color="primary">
+                <Dropdown.Button flat color="secondary" css={{backgroundColor: '$gray', color: '#697177'}}>
                     {selected}
                 </Dropdown.Button>
                 <Dropdown.Menu

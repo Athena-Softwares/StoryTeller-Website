@@ -12,7 +12,6 @@ import { CustomLink } from '@/Components/Texts'
 import { useRouter } from 'next/router'
 
 function Login() {
-    const router = useRouter()
     return (
         <>
             <Head>
@@ -23,52 +22,14 @@ function Login() {
             </Head>
             <main>
                 <Container fluid className={container.container_black}>
-                    <Row className='h-100'>
+                    <Row className='min-vh-100'>
                         <Col xs={12} md={8} className='d-flex flex-column align-items-center justify-content-center'>
                             <Row className='justify-content-center my-4'>
                                 <Col>
                                     <span className={text.title_white}>Faça seu Log-in</span>
                                 </Col>
                             </Row>
-                            <Row className='justify-content-center'>
-                                <Col xs={10}>
-                                    <Row className='py-4'>
-                                        <Col className='d-flex flex-column justify-content-center align-items-center'>
-                                            <Input
-                                                width='100%'
-                                                labelPlaceholder="E-mail"
-                                                status="default"
-                                                clearable
-                                            />
-                                            <Spacer y={2} />
-                                            <Input.Password
-                                                width='100%'
-                                                labelPlaceholder="Senha"
-                                                status="default"
-                                                clearable
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-2'>
-                                        <Col className='px-3'>
-                                            <Checkbox color='secondary' className={text.small_regular}>
-                                                Lembre-se de mim
-                                            </Checkbox>
-                                        </Col>
-                                    </Row>
-                                    <Row className='py-2'>
-                                        <Col md={12} className='d-flex justify-content-center'>
-                                            <Button rounded size="md" className={`${buttons.darkRed} ${buttons.general}`} onClick={() => router.push('/dashboard')}>Entrar</Button>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col md={12} className='d-flex justify-content-center align-items-center px-0 mx-0 pt-2' >
-                                            {/* <span className={text.small_regular}>Não possui login?<Link className={`${text.links}, ${text.small_semiBold}`} href="/login" color="green"> Cadastre-se</Link></span> */}
-                                            <span className={text.small_regular}>Não possui login?</span><CustomLink href='/cadastro' className={`${text.small_regular} px-1`}>Cadastre-se</CustomLink>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
+                            <SignInForm />
 
                         </Col>
                         <Col md={4} className={`${container.image_background_login} align-items-center d-none d-md-flex`}>
@@ -84,5 +45,48 @@ function Login() {
 
     )
 }
-
+const SignInForm = () => {
+    const router = useRouter()
+    return (
+        <Row className='justify-content-center'>
+            <Col xs={10}>
+                <Row className='py-4'>
+                    <Col className='d-flex flex-column justify-content-center align-items-center'>
+                        <Input
+                            width='100%'
+                            labelPlaceholder="E-mail"
+                            status="default"
+                            clearable
+                        />
+                        <Spacer y={2} />
+                        <Input.Password
+                            width='100%'
+                            labelPlaceholder="Senha"
+                            status="default"
+                            clearable
+                        />
+                    </Col>
+                </Row>
+                <Row className='py-2'>
+                    <Col className='px-3'>
+                        <Checkbox color='secondary' className={text.small_regular}>
+                            Lembre-se de mim
+                        </Checkbox>
+                    </Col>
+                </Row>
+                <Row className='py-2'>
+                    <Col md={12} className='d-flex justify-content-center'>
+                        <Button rounded size="md" className={`${buttons.darkRed} ${buttons.general}`} onClick={() => router.push('/dashboard')}>Entrar</Button>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={12} className='d-flex justify-content-center align-items-center px-0 mx-0 pt-2' >
+                        {/* <span className={text.small_regular}>Não possui login?<Link className={`${text.links}, ${text.small_semiBold}`} href="/login" color="green"> Cadastre-se</Link></span> */}
+                        <span className={text.small_regular}>Não possui login?</span><CustomLink href='/cadastro' className={`${text.small_regular} px-1`}>Cadastre-se</CustomLink>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+    )
+}
 export default Login
