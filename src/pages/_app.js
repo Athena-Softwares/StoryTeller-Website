@@ -23,13 +23,13 @@ const theme = createTheme({
       secondaryActive: '#4a1215',
       error: '#FCC5D8',
       //shades
-      gray:  '#16181a',
+      gray:  '#18181b',
       grayScaleActive: '#141c1c',
       grayScaleLight: '#16181a',
       grayScaleLightContrast: '#697177',
       grayScaleLightHover: '#454A4E',
       grayScaleLightActive: '#697177',
-      myColor: 'green'
+      grayPrimaryActive: 'red'
     },
   }
 })
