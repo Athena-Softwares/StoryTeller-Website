@@ -2,9 +2,27 @@
     background-color: #FFFFFF;
 }
 .background_header{
+
+}
+.friends_header{
     background-color: #827249;
-    height: 40px;
+    height: 80px;
+}
+.friends_header_text{
+    font-size: 30px;
 }
 .friends_body{
     height: 100%;
+}
+
+.friends_card{
+    padding: 10px 3px 3px 10px;
+}
+.friends_card_icon{
+    border-radius: 50%;
+}
+
+.friends_card_text{
+    color: black;
+    text-align: center;
 }
