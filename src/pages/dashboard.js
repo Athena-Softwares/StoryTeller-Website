@@ -1,6 +1,9 @@
 import Header from '@/Components/Header'
+import FriendList from '@/Components/FriendList'
 import Head from 'next/head'
 import React from 'react'
+import styles from '../styles/Containers.module.css'
+import { Container } from '@nextui-org/react'
 
 function Dashboard() {
     return (
@@ -13,6 +16,12 @@ function Dashboard() {
             </Head>
             <main>
                 <Header />
+                <Container class={`
+                    ${styles.container_white}
+                `}>
+                    
+                    <FriendList/>
+                </Container>
             </main>
         </>
     )
